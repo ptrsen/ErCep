@@ -7,7 +7,9 @@ import java.util.Map;
 
 public class Subscriptor {
     private static final Logger log = LoggerFactory.getLogger(Main.class);      // Logger
-    private int a = 0;
+
+    public int tp = 0, np =0;
+
 /*
     public void update(Object[] row) {
         a=a+1;
@@ -17,10 +19,19 @@ public class Subscriptor {
 */
     public void update(Map row) {
         //log.info(  row.toString()  );
-        log.info( row.get("Type").toString()  );
+       // log.info( row.get("Type").toString()  );
+
+
+       if ( row.get("Type").equals("2") ) {
+           tp += 1;
+       }else{
+           np += 1;
+       }
+
+       // log.info("trueP:"+Integer.toString(tp)+", trueF:"+Integer.toString(np));
     }
 
-/*
+    /*
     public void updateEnd() {
     //    log.info("end");
     }
